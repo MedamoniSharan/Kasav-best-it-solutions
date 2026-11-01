@@ -6,8 +6,8 @@ export function Services() {
     <section className="section" id="services">
       <div className="wrap">
         <header className="section-head">
-          <h2>Our Best Services</h2>
-          <p>Practical IT for companies that need the work done, not another slide deck.</p>
+          <h2>Services and industries</h2>
+          <p>Permanent hiring, senior search, and specialist cover across the sectors we know well.</p>
         </header>
         <div className="service-grid">
           {services.map((service) => (
@@ -31,8 +31,8 @@ export function WhyChoose() {
     <section className="section why" id="process">
       <div className="wrap">
         <header className="section-head is-center">
-          <h2>Why Choose Us</h2>
-          <p>A straight path from the first conversation to a system someone on your team can run.</p>
+          <h2>How a shortlist is built</h2>
+          <p>Every candidate passes a four-point check before they reach your hiring managers. We stay for onboarding after that.</p>
         </header>
         <div className="flow">
           <svg className="flow-line" viewBox="0 0 1100 320" preserveAspectRatio="none" aria-hidden="true">

@@ -1,6 +1,6 @@
-# Kasvibes IT Solutions
+# Legacy IT Solutions
 
-Marketing site for Kasvibes IT Solutions. React and TypeScript, built with Vite.
+Marketing site for Legacy IT Solutions, a staffing and recruitment agency. React and TypeScript, built with Vite.
 
 ```bash
 npm install

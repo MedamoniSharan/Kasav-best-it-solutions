@@ -4,8 +4,8 @@ const links = [
   { href: '#top', label: 'Home' },
   { href: '#about', label: 'About' },
   { href: '#services', label: 'Services' },
-  { href: '#work', label: 'Portfolio' },
-  { href: '#insights', label: 'Blog' },
+  { href: '#work', label: 'Industries' },
+  { href: '#insights', label: 'Careers' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -15,11 +15,11 @@ export function Logo() {
       <span className="logo-mark" aria-hidden="true">
         <svg viewBox="0 0 32 32">
           <rect width="32" height="32" rx="9" fill="#C6EF3A" />
-          <path d="M10.2 8h3.3v6.1L19.8 8h4l-7.2 7.6 7.6 8.4h-4.1l-6.6-7.4V24h-3.3V8z" fill="#172100" />
+          <path d="M10 8h3.4V20.6H22V24H10V8z" fill="#172100" />
         </svg>
       </span>
       <span className="logo-word">
-        <strong>kasvibes</strong>
+        <strong>Legacy</strong>
         <small>IT Solutions</small>
       </span>
     </a>
@@ -48,11 +48,11 @@ export function Header() {
             </a>
           ))}
           <a className="btn btn-sm nav-cta" href="#contact" onClick={() => setOpen(false)}>
-            Get Started
+            Talk to us
           </a>
         </nav>
         <a className="btn btn-sm header-cta" href="#contact">
-          Get Started
+          Talk to us
         </a>
         <button
           type="button"

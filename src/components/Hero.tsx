@@ -15,15 +15,15 @@ export function Hero() {
       </div>
       <div className="wrap hero-copy">
         <h1>
-          Your Operations with
+          Connecting Businesses
           <br />
-          Smart IT Solutions
+          with the right people
         </h1>
         <p>
-          We design, build, and look after the software and cloud systems that keep a company moving. One team in Hyderabad, from the first map of the work to the Monday after launch.
+          Legacy IT Solutions is a staffing partner for IT, engineering, healthcare, finance, administration, and customer service. We source people who fit the role and stay long enough to matter.
         </p>
         <a className="btn" href="#contact">
-          Get Started
+          Talk to us
           <svg viewBox="0 0 20 20" aria-hidden="true">
             <path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -37,7 +37,7 @@ export function Clients() {
   const rows = [0, 1]
 
   return (
-    <section className="clients" aria-label="Teams we work with">
+    <section className="clients" aria-label="Sectors we staff">
       <div className="marquee">
         <div className="marquee-track">
           {rows.map((copy) => (

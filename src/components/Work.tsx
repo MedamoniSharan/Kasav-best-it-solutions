@@ -17,8 +17,8 @@ export function Work() {
     <section className="section" id="work">
       <div className="wrap">
         <header className="section-head">
-          <h2>Our Smart Work</h2>
-          <p>Systems we have shaped for operations, clinics, finance, and the teams around them.</p>
+          <h2>Industries we hire for</h2>
+          <p>Role families we staff across the UK and international markets. Open one to see the positions we cover.</p>
         </header>
         <div className="work-grid">
           {projects.map((project) => (
@@ -51,7 +51,7 @@ export function Work() {
             <p>{active.outcome}</p>
             <div className="modal-actions">
               <a className="btn btn-sm" href="#contact" onClick={() => setActive(null)}>
-                Start a similar project
+                Discuss this hiring need
               </a>
               <button type="button" className="text-btn" onClick={() => setActive(null)}>
                 Close

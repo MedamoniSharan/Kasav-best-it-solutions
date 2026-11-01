@@ -483,9 +483,11 @@ button { cursor: pointer; }
 
 .stack-row li {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--line);
   font-size: 13px;
   font-weight: 800;
   color: #3a4046;
@@ -586,7 +588,7 @@ button { cursor: pointer; }
 .quote-card p { flex: 1; }
 
 .note { padding: 22px; display: flex; flex-direction: column; }
-.note time { color: #5d8610; font-size: 13px; font-weight: 800; }
+.note time, .note-kicker { color: #5d8610; font-size: 13px; font-weight: 800; margin: 0; }
 .note h3 { margin-top: 8px; }
 .note button {
   margin-top: 16px;
@@ -610,9 +612,11 @@ button { cursor: pointer; }
 .contact-facts { list-style: none; margin: 26px 0 0; padding: 0; display: grid; gap: 14px; }
 .contact-facts strong { display: block; font-size: 13px; color: var(--muted); font-weight: 700; }
 .contact-facts a { font-weight: 800; }
+.contact-facts > li > a { display: block; }
 
 .hours { display: grid; gap: 4px; margin-top: 4px; font-weight: 600; }
-.hours span { display: flex; justify-content: space-between; gap: 16px; max-width: 280px; }
+.hours span { display: flex; justify-content: space-between; gap: 16px; max-width: 360px; }
+.hours a { font-weight: 800; }
 .hours em { font-style: normal; color: var(--muted); font-weight: 700; }
 
 .form-card { padding: 22px; display: grid; gap: 12px; }

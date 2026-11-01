@@ -48,70 +48,82 @@ export type Quote = {
   name: string
   role: string
   text: string
-  photo: string
+  photo?: string
+}
+
+export type Office = {
+  label: string
+  lines: [string, string]
+  mapHref: string
+}
+
+export type Phone = {
+  label: string
+  display: string
+  href: string
 }
 
 export const services: Service[] = [
   {
-    title: 'IT Consulting',
-    text: 'We look at the tools you already pay for and the work that still lives in spreadsheets, then say what to keep, fix, or retire.',
+    title: 'Permanent Staffing',
+    text: 'Long-term hires for core teams. We cover attraction, benchmarking, background checks, and a retention view before anyone starts.',
+    icon: 'layers',
+  },
+  {
+    title: 'Senior Search',
+    text: 'Discreet headhunting for senior technical and leadership roles, with technical evaluation and confidential introductions.',
     icon: 'consult',
   },
   {
-    title: 'Cloud Solutions',
-    text: 'Mail, files, and apps moved onto a cloud your own staff can administer, with the cutover and the first months of care included.',
-    icon: 'cloud',
-  },
-  {
-    title: 'Cyber Security',
-    text: 'Accounts, backups, and the paths between offices. We close the obvious gaps and leave a routine your team can keep.',
-    icon: 'shield',
-  },
-  {
-    title: 'Software Development',
-    text: 'Custom systems for the jobs packaged tools keep missing: bookings, shop-floor flow, customer portals, and internal desks.',
+    title: 'Information Technology',
+    text: 'Software, SAP, Oracle, data, cloud, cybersecurity, and infrastructure specialists from active and passive talent pools.',
     icon: 'code',
   },
   {
-    title: 'Data & Analytics',
-    text: 'The numbers you already collect, arranged so a manager can see what changed this week without asking for another export.',
-    icon: 'chart',
+    title: 'Engineering',
+    text: 'Mechanical and electrical engineers, automation specialists, project managers, CAD designers, and quality assurance.',
+    icon: 'pulse',
   },
   {
-    title: 'Managed Support',
-    text: 'A named team for the questions, the outages, and the updates. You get a person who knows your setup, not a fresh ticket each time.',
-    icon: 'support',
+    title: 'Healthcare',
+    text: 'Clinical and non-clinical admins, medical records, allied health, compliance, and operations staff.',
+    icon: 'shield',
+  },
+  {
+    title: 'Finance & Operations',
+    text: 'Finance, administration, and customer service roles, plus supply chain, procurement, legal, and marketing when you need them.',
+    icon: 'chart',
   },
 ]
 
 export const steps: Step[] = [
   {
-    title: 'Discover',
-    text: 'We sit with the people who do the work and map how it actually runs.',
+    title: 'Source',
+    text: 'Targeted headhunting across UK databases, passive networks, and international talent pools.',
     icon: 'search',
     bg: '#e5f0ff',
     tint: '#c5dcff',
     ink: '#1d4f91',
   },
   {
-    title: 'Plan',
-    text: 'Scope, timeline, and stack are agreed before anyone starts building.',
-    icon: 'map',
+    title: 'Screen',
+    text: 'Interviews, qualification audits, right-to-work checks, and a review of career progression.',
+    icon: 'shield',
     bg: '#ffe7cc',
     tint: '#ffd09a',
     ink: '#9a4d09',
   },
   {
-    title: 'Design',
-    text: 'Screens and flows your staff can follow on the first Monday, not after a manual.',
+    title: 'Assess',
+    text: 'Hard skills, culture fit, leadership, and whether the person is likely to stay.',
     icon: 'pen',
     bg: '#ece3ff',
     tint: '#d7c8ff',
     ink: '#5b3d9e',
   },
   {
-    title: 'Build',
-    text: 'Software, cloud, and integrations shipped in short loops you can see.',
+    title: 'Shortlist',
+    text: 'Three to five profiles, with consultant notes, interview times, and salary guidance.',
     icon: 'layers',
     bg: '#e3f7ea',
     tint: '#bfe8cc',
@@ -119,8 +131,8 @@ export const steps: Step[] = [
   },
   {
     title: 'Support',
-    text: 'We stay after launch and keep the system healthy as the work changes.',
-    icon: 'pulse',
+    text: 'Onboarding and retention support after the placement, so the hire settles in.',
+    icon: 'support',
     bg: '#fff3c9',
     tint: '#ffe49a',
     ink: '#8a6408',
@@ -129,151 +141,164 @@ export const steps: Step[] = [
 
 export const projects: Project[] = [
   {
-    id: 'retail',
-    title: 'Retail operations hub',
-    field: 'Commerce',
+    id: 'it',
+    title: 'Information Technology',
+    field: 'IT',
     theme: 'retail',
     summary:
-      'A single desk for store orders, stock, and the exceptions that used to bounce between WhatsApp and three spreadsheets.',
-    outcome: 'Store leads check one screen at open and close. The evening stock call got shorter because the gaps are already listed.',
+      'Developers, ERP consultants, data specialists, and infrastructure engineers for product and enterprise teams.',
+    outcome:
+      'Roles include software engineers, SAP and Oracle consultants, data engineers and analysts, business analysts, cloud and DevOps, cybersecurity, AI and machine learning, full stack, database administrators, IT support, and network engineers.',
     bars: [46, 72, 58, 90, 64, 80],
   },
   {
-    id: 'clinic',
-    title: 'Clinic patient portal',
+    id: 'engineering',
+    title: 'Engineering',
+    field: 'Engineering',
+    theme: 'field',
+    summary: 'Technical hires for design, delivery, and quality across engineering teams.',
+    outcome:
+      'Roles include mechanical and electrical engineers, systems and automation specialists, project managers, CAD designers, and quality assurance engineers.',
+    bars: [70, 55, 88, 62, 76, 50],
+  },
+  {
+    id: 'healthcare',
+    title: 'Healthcare',
     field: 'Healthcare',
     theme: 'clinic',
-    summary:
-      'Appointments, reports, and follow-ups in one place for a clinic that had outgrown its front-desk register.',
-    outcome: 'Front desk spends the morning on patients, not on finding yesterday’s file. Reminders go out without a second tool.',
+    summary: 'Clinical support and operational staff for healthcare organisations.',
+    outcome:
+      'Roles include clinical and non-clinical administrators, medical records managers, allied health professionals, healthcare compliance specialists, and operations staff.',
     bars: [60, 48, 84, 70, 92, 66],
   },
   {
     id: 'finance',
-    title: 'Finance control room',
+    title: 'Finance & Accounting',
     field: 'Finance',
     theme: 'finance',
-    summary:
-      'A live view of invoices, collections, and the accounts that need a person today, built for a team tired of month-end surprises.',
-    outcome: 'Collections see who to call before the week starts. Month-end is a check, not a reconstruction.',
+    summary: 'Controllers, accountants, and the people who keep payroll and billing moving.',
+    outcome:
+      'Roles include financial controllers and analysts, senior management accountants, audit and tax specialists, payroll administrators, and billing officers.',
     bars: [38, 64, 52, 78, 96, 70],
   },
   {
-    id: 'field',
-    title: 'Field service board',
-    field: 'Logistics',
-    theme: 'field',
-    summary:
-      'Jobs, vans, and parts for a crew that was dispatching from phone calls and a whiteboard in the depot.',
-    outcome: 'Dispatchers see which jobs are late while there is still time to move them. Parts requests stop arriving as photos.',
-    bars: [70, 55, 88, 62, 76, 50],
-  },
-  {
-    id: 'people',
-    title: 'People platform',
-    field: 'Workplace',
+    id: 'admin',
+    title: 'Administration',
+    field: 'Administration',
     theme: 'people',
-    summary:
-      'Leave, onboarding, and the documents a growing team was keeping in inboxes and shared drives.',
-    outcome: 'New hires get access on day one. HR stops chasing the same form from three different folders.',
+    summary: 'Office, people, and executive support for teams that need the day to run cleanly.',
+    outcome:
+      'Roles include executive assistants, office and operations managers, HR and people operations, document controllers, and reception specialists.',
     bars: [52, 80, 66, 74, 58, 86],
   },
   {
-    id: 'learn',
-    title: 'Learning workspace',
-    field: 'Education',
+    id: 'service',
+    title: 'Customer Service',
+    field: 'Customer Service',
     theme: 'learn',
-    summary:
-      'Courses, attendance, and progress for a training team that had been teaching out of slide decks and chat groups.',
-    outcome: 'Trainers see who is behind before the batch ends. Learners have one place for the material and the questions.',
+    summary: 'Client-facing leads and support specialists for ongoing customer relationships.',
+    outcome:
+      'Roles include customer success managers, call centre and helpdesk leads, client relationship leads, technical support specialists, and after-sales coordinators. Custom briefs can also cover supply chain, procurement, legal, and marketing.',
     bars: [64, 44, 78, 90, 60, 72],
   },
 ]
 
 export const notes: Note[] = [
   {
-    id: 'cutover',
-    date: '12 Oct 2026',
-    title: 'Modernize without a weekend cutover',
-    excerpt: 'Most teams do not fail because the new system is wrong. They fail because Monday still has to run.',
-    body: 'We move one workflow at a time and leave the old path up until the new one has a week of real use behind it. Staff keep a way to finish today’s work. The switch is a Tuesday morning, not a locked office and a hope.',
+    id: 'mission',
+    date: 'Our mission',
+    title: 'The legacy is the team that stays',
+    excerpt: 'Success is the long-term result of the teams we help build, not the speed of a single hire.',
+    body: 'We supply high-performing people to businesses and give professionals careers that move them forward. Screening is rigorous, fees are explained up front, and support continues through onboarding and retention.',
   },
   {
-    id: 'support',
-    date: '02 Sep 2026',
-    title: 'What managed support should cover',
-    excerpt: 'A retainer is only useful if someone already knows your accounts, your vendors, and your odd exceptions.',
-    body: 'Ask who answers at 9am, what “urgent” means, and whether backups are tested or only scheduled. The useful version is a named person, a list of systems, and a monthly note on what changed. Anything vaguer is a queue.',
+    id: 'model',
+    date: 'How we work',
+    title: 'An extension of your hiring team',
+    excerpt: 'Dedicated recruiters learn the culture, the technical bar, and the roles you will need next.',
+    body: 'Recruiters represent your brand to candidates. Strong profiles are advocated for, so more of them reach interview. As demand grows, we keep a bench ready instead of starting the search from zero.',
   },
   {
-    id: 'cloud',
-    date: '18 Aug 2026',
-    title: 'Choosing a cloud path for a 40-person team',
-    excerpt: 'You rarely need a new platform. You need mail, files, and two line-of-business apps to live somewhere you can administer.',
-    body: 'Start from the jobs: who shares what, who must work from outside the office, and which tool is the system of record. Then pick the smallest cloud move that makes those jobs dull. Dull is the goal.',
+    id: 'careers',
+    date: 'Candidates',
+    title: 'Register for current and upcoming roles',
+    excerpt: 'A CV puts you in front of the Luton recruitment team. Candidate placement is free.',
+    body: 'Send a PDF or Word CV, up to 10MB, for IT, engineering, healthcare, finance, administration, customer support, or a future senior role. Profiles are reviewed within 24 to 48 hours and routed to Legacyitsoulutions@outlook.com.',
   },
 ]
 
 export const sideQuotes: Quote[] = [
   {
-    name: 'Noah Ellis',
-    role: 'Operations, Northwind',
-    text: 'They sat with the floor before they opened a design file. The first version already matched the morning routine.',
-    photo: '/images/team-2.jpg',
+    name: 'Our mission',
+    role: 'Legacy IT Solutions',
+    text: 'To empower businesses by supplying high-performing human capital while providing professionals with transformative career opportunities.',
   },
   {
-    name: 'Alan Brooks',
-    role: 'Director, Helio Finance',
-    text: 'Scope and price were written down before the build. We were not guessing what the next month would cost.',
-    photo: '/images/avatar-3.jpg',
+    name: 'Where we deliver',
+    role: 'United Kingdom and international',
+    text: 'Headquartered in Luton, with offshore and nearshore sourcing for clients and talent networks beyond the UK.',
   },
 ]
 
 export const quotes: Quote[] = [
   {
-    name: 'Noah Ellis',
-    role: 'Operations, Northwind',
-    text: 'They replaced three tools we were fighting with one system the floor actually opens in the morning.',
-    photo: '/images/team-2.jpg',
+    name: 'Dedicated recruiters',
+    role: 'Your brand, represented properly',
+    text: 'Sourcing specialists who speak for your company when they approach people who are not actively looking.',
   },
   {
-    name: 'Sofia Marin',
-    role: 'Founder, Orbit Health',
-    text: 'The portal went live without a weekend shutdown. Front desk still had a way to book people on day one.',
-    photo: '/images/avatar-2.jpg',
+    name: 'Candidate advocacy',
+    role: 'Higher interview conversion',
+    text: 'We promote the strongest profiles so hiring managers see why a person is worth the conversation.',
   },
   {
-    name: 'Alan Brooks',
-    role: 'Director, Helio Finance',
-    text: 'We finally see collections before the week starts. Month-end is a check now, not a reconstruction.',
-    photo: '/images/avatar-3.jpg',
+    name: 'Custom pipelines',
+    role: 'A bench, not a one-off search',
+    text: 'Talent pools built around your stack and your timeline, ready as project demand expands.',
   },
 ]
 
 export const contact = {
-  phoneDisplay: '+91 93911 44797',
-  phoneHref: 'tel:+919391144797',
-  whatsappHref: 'https://wa.me/919391144797',
-  email: 'hr@kasvibes.com',
-  emailHref: 'mailto:hr@kasvibes.com',
-  address: ['aVance Business Hub, HITEC City', 'Hyderabad, Telangana 500081'],
-  mapHref: 'https://www.google.com/maps/search/?api=1&query=aVance%20Business%20Hub%20HITEC%20City%20Hyderabad%20500081',
+  phones: [
+    { label: 'UK / WhatsApp', display: '+44 7466 929441', href: 'tel:+447466929441' },
+    { label: 'India / WhatsApp', display: '+91 90529 39313', href: 'tel:+919052939313' },
+  ] satisfies Phone[],
+  whatsappHref: 'https://wa.me/447466929441',
+  email: 'hr@legacyituk.in',
+  emailHref: 'mailto:hr@legacyituk.in',
+  careersEmail: 'Legacyitsoulutions@outlook.com',
+  careersEmailHref: 'mailto:Legacyitsoulutions@outlook.com',
+  offices: [
+    {
+      label: 'United Kingdom (HQ)',
+      lines: ['Arthur Street, Luton, LU1 3SG', 'Bedfordshire, United Kingdom'],
+      mapHref: 'https://www.google.com/maps/search/?api=1&query=Arthur%20Street%20Luton%20LU1%203SG',
+    },
+    {
+      label: 'India office',
+      lines: ['Manikanta Nilayam, Bustand Backside', 'Nandivelugu Road, Guntur – 522001'],
+      mapHref:
+        'https://www.google.com/maps/search/?api=1&query=Manikanta%20Nilayam%20Nandivelugu%20Road%20Guntur%20522001',
+    },
+  ] satisfies Office[],
   hours: [
-    { days: 'Monday to Friday', note: 'Open' },
-    { days: 'Saturday', note: 'Week off' },
-    { days: 'Sunday', note: 'Week off' },
+    { days: 'Monday to Friday', note: '9:00 AM – 6:00 PM BST' },
+    { days: 'Saturday', note: 'Closed' },
+    { days: 'Sunday', note: 'Closed' },
   ],
 }
 
-export const clients = ['Northwind', 'Apex', 'Lumen', 'Orbit', 'Vanta', 'Helix', 'Nimbus']
+export const clients = ['IT', 'Engineering', 'Healthcare', 'Finance', 'Administration', 'Customer Service']
 
 export const stack = [
-  { name: 'React', logo: '/logos/react.svg' },
-  { name: 'TypeScript', logo: '/logos/typescript.svg' },
-  { name: 'Node.js', logo: '/logos/nodejs.svg' },
-  { name: 'Python', logo: '/logos/python.svg' },
-  { name: 'AWS', logo: '/logos/aws.svg' },
-  { name: 'Azure', logo: '/logos/azure.svg' },
-  { name: 'Docker', logo: '/logos/docker.svg' },
-  { name: 'Postgres', logo: '/logos/postgres.svg' },
+  'Software Engineers',
+  'SAP & Oracle',
+  'Data & Analytics',
+  'Cloud & DevOps',
+  'Cybersecurity',
+  'Engineering',
+  'Healthcare',
+  'Finance',
+  'Administration',
+  'Customer Service',
 ]

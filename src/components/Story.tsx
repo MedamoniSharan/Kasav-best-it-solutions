@@ -1,19 +1,19 @@
 import { useState, type FormEvent } from 'react'
-import { contact, notes, quotes, sideQuotes, stack } from '../data'
+import { contact, notes, quotes, services, sideQuotes, stack } from '../data'
 import { Logo } from './Header'
 
 const team = [
   {
-    name: 'James Hale',
-    role: 'Cloud Lead',
-    photo: '/images/team-1.jpg',
-    alt: 'Portrait of James Hale, cloud lead',
+    name: 'United Kingdom',
+    role: 'Headquarters · Luton, Bedfordshire',
+    photo: '/images/office-a.jpg',
+    alt: 'Team working together around a table',
   },
   {
-    name: 'Elena Brooks',
-    role: 'Solutions Lead',
-    photo: '/images/avatar-1.jpg',
-    alt: 'Portrait of Elena Brooks, solutions lead',
+    name: 'India',
+    role: 'Delivery centre · Guntur, Andhra Pradesh',
+    photo: '/images/collab-2.jpg',
+    alt: 'Two colleagues reviewing work at a desk',
   },
 ]
 
@@ -22,8 +22,8 @@ export function Team() {
     <section className="section team">
       <div className="wrap">
         <header className="section-head is-center">
-          <h2>We have an expert team</h2>
-          <p>The people who scope the work also stay for the build and the support.</p>
+          <h2>Two offices, one delivery team</h2>
+          <p>Luton leads client work. Guntur supports sourcing for UK and international hiring.</p>
         </header>
         <div className="team-row">
           {team.map((person) => (
@@ -46,17 +46,12 @@ export function Stack() {
     <section className="section stack" aria-labelledby="stack-title">
       <div className="wrap">
         <header className="section-head is-center">
-          <h2 id="stack-title">Our Tech Stack</h2>
-          <p>Tools we use when they fit the job. The stack follows the work, not the other way around.</p>
+          <h2 id="stack-title">Roles we cover</h2>
+          <p>Specialist hiring across technology and the operational teams around it.</p>
         </header>
         <ul className="stack-row">
-          {stack.map((item) => (
-            <li key={item.name}>
-              <span className="stack-mark">
-                <img src={item.logo} alt="" />
-              </span>
-              {item.name}
-            </li>
+          {stack.map((name) => (
+            <li key={name}>{name}</li>
           ))}
         </ul>
       </div>
@@ -69,14 +64,14 @@ export function About() {
     <section className="section about" id="about">
       <div className="wrap about-grid">
         <div className="about-copy">
-          <h2>Why Choose Smart Software</h2>
+          <h2>Building enduring teams</h2>
           <p>
-            Most teams do not need another platform. They need the one they have to stop getting in the way. We build and look after software that follows how your company already works, then we stay to keep it running.
+            Founded in Luton, Legacy IT Solutions treats staffing as a strategic part of the business. We hire across the United Kingdom and internationally in IT, engineering, healthcare, finance, administration, and customer support.
           </p>
           <ul className="checks">
-            <li>One team for the build, the cloud, and day-to-day support</li>
-            <li>Scope and price agreed before the work starts</li>
-            <li>A handover your staff can run without us in the room</li>
+            <li>Technical and compliance screening before a profile is shared</li>
+            <li>Fees and the process explained before the search starts</li>
+            <li>Onboarding and retention support after the placement</li>
           </ul>
         </div>
         <figure className="about-photo">
@@ -90,7 +85,7 @@ export function About() {
             <blockquote key={quote.name}>
               <p>“{quote.text}”</p>
               <footer>
-                <img src={quote.photo} alt="" />
+                {quote.photo && <img src={quote.photo} alt="" />}
                 <span>
                   <strong>{quote.name}</strong>
                   {quote.role}
@@ -109,20 +104,14 @@ export function Testimonials() {
     <section className="section" aria-labelledby="feedback-title">
       <div className="wrap">
         <header className="section-head is-center">
-          <h2 id="feedback-title">Our Customers’ Feedback</h2>
-          <p>Notes from teams who asked us to make the daily work quieter.</p>
+          <h2 id="feedback-title">An extension of your team</h2>
+          <p>We sit with your hiring managers, not outside the process as a vendor.</p>
         </header>
         <div className="quote-grid">
           {quotes.map((quote) => (
             <blockquote key={quote.name} className="quote-card">
-              <div className="stars" aria-label="5 out of 5">
-                {Array.from({ length: 5 }, (_, index) => (
-                  <span key={index}>★</span>
-                ))}
-              </div>
-              <p>“{quote.text}”</p>
+              <p>{quote.text}</p>
               <footer>
-                <img src={quote.photo} alt="" />
                 <span>
                   <strong>{quote.name}</strong>
                   {quote.role}
@@ -143,15 +132,15 @@ export function Insights() {
     <section className="section" id="insights">
       <div className="wrap">
         <header className="section-head">
-          <h2>From the notebook</h2>
-          <p>Short notes on how we approach a move, a support retainer, and a cloud choice.</p>
+          <h2>For employers and candidates</h2>
+          <p>How we measure a placement, how the team works with you, and how to send a CV.</p>
         </header>
         <div className="note-grid">
           {notes.map((note) => {
             const open = openId === note.id
             return (
               <article key={note.id} className={open ? 'note is-open' : 'note'}>
-                <time dateTime={note.date}>{note.date}</time>
+                <p className="note-kicker">{note.date}</p>
                 <h3>{note.title}</h3>
                 <p>{open ? note.body : note.excerpt}</p>
                 <button type="button" onClick={() => setOpenId(open ? null : note.id)}>
@@ -180,7 +169,7 @@ export function Contact() {
     const message = String(data.get('message') || '').trim()
 
     if (!name || !email || !message) {
-      setError('Add your name, email, and a short note about the work.')
+      setError('Add your name, email, and a short note about the role or the CV.')
       return
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -189,7 +178,7 @@ export function Contact() {
     }
 
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\n${message}`)
-    const subject = encodeURIComponent(`Project inquiry from ${name}`)
+    const subject = encodeURIComponent(`Staffing inquiry from ${name}`)
     setError('')
     setSent({
       name,
@@ -202,26 +191,36 @@ export function Contact() {
     <section className="section contact" id="contact">
       <div className="wrap contact-grid">
         <div>
-          <h2>Tell us about the work</h2>
+          <h2>Contact Legacy IT Solutions</h2>
           <p>
-            Share what is slowing the team down. We reply with a plain read on whether we are the right fit, and what a first step would look like.
+            Employers, candidates, and partners can write to us here. A senior recruiter replies within 24 business hours. For an urgent vacancy, use WhatsApp.
           </p>
           <ul className="contact-facts">
-            <li>
-              <strong>Address</strong>
-              <a href={contact.mapHref} target="_blank" rel="noreferrer">
-                {contact.address[0]}
-                <br />
-                {contact.address[1]}
-              </a>
-            </li>
+            {contact.offices.map((office) => (
+              <li key={office.label}>
+                <strong>{office.label}</strong>
+                <a href={office.mapHref} target="_blank" rel="noreferrer">
+                  {office.lines[0]}
+                  <br />
+                  {office.lines[1]}
+                </a>
+              </li>
+            ))}
             <li>
               <strong>Phone</strong>
-              <a href={contact.phoneHref}>{contact.phoneDisplay}</a>
+              <span className="hours">
+                {contact.phones.map((phone) => (
+                  <span key={phone.href}>
+                    {phone.label}
+                    <a href={phone.href}>{phone.display}</a>
+                  </span>
+                ))}
+              </span>
             </li>
             <li>
               <strong>Email</strong>
               <a href={contact.emailHref}>{contact.email}</a>
+              <a href={contact.careersEmailHref}>{contact.careersEmail}</a>
             </li>
             <li>
               <strong>Hours</strong>
@@ -265,11 +264,11 @@ export function Contact() {
             </label>
             <label>
               What do you need?
-              <textarea name="message" rows={4} placeholder="The system, the team size, and what is getting in the way." />
+              <textarea name="message" rows={4} placeholder="The role, the team, or the CV you want reviewed." />
             </label>
             {error && <p className="form-error">{error}</p>}
             <button className="btn" type="submit">
-              Get Started
+              Send message
             </button>
           </form>
         )}
@@ -284,38 +283,43 @@ export function Footer() {
       <div className="wrap footer-grid">
         <div>
           <Logo />
-          <p>Software, cloud, and support for companies that want their operations to feel quieter.</p>
+          <p>Staffing for IT, engineering, healthcare, finance, administration, and customer service. Headquarters in Luton, with delivery from Guntur.</p>
         </div>
         <div>
           <h3>Company</h3>
           <a href="#about">About</a>
           <a href="#process">How we work</a>
-          <a href="#work">Portfolio</a>
-          <a href="#insights">Blog</a>
+          <a href="#work">Industries</a>
+          <a href="#insights">Careers</a>
         </div>
         <div>
           <h3>Services</h3>
-          <a href="#services">IT Consulting</a>
-          <a href="#services">Cloud Solutions</a>
-          <a href="#services">Cyber Security</a>
-          <a href="#services">Software Development</a>
+          {services.slice(0, 4).map((service) => (
+            <a key={service.title} href="#services">
+              {service.title}
+            </a>
+          ))}
         </div>
         <div>
           <h3>Contact</h3>
-          <a href={contact.mapHref} target="_blank" rel="noreferrer">
-            {contact.address[0]}
+          <a href={contact.offices[0].mapHref} target="_blank" rel="noreferrer">
+            {contact.offices[0].lines[0]}
             <br />
-            {contact.address[1]}
+            {contact.offices[0].lines[1]}
           </a>
-          <a href={contact.phoneHref}>{contact.phoneDisplay}</a>
+          {contact.phones.map((phone) => (
+            <a key={phone.href} href={phone.href}>
+              {phone.display}
+            </a>
+          ))}
           <a href={contact.emailHref}>{contact.email}</a>
-          <p>Mon–Fri open · Sat & Sun week off</p>
+          <p>Mon–Fri 9:00 AM – 6:00 PM BST · Sat & Sun closed</p>
         </div>
       </div>
       <div className="footer-bar">
         <div className="wrap">
-          <span>© 2026 Kasvibes IT Solutions. All rights reserved.</span>
-          <span>HITEC City, Hyderabad</span>
+          <span>© 2026 Legacy IT Solutions. All rights reserved.</span>
+          <span>Luton, United Kingdom</span>
         </div>
       </div>
     </footer>
