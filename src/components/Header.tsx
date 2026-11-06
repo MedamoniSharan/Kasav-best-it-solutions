@@ -12,16 +12,11 @@ const links = [
 export function Logo() {
   return (
     <a href="#top" className="logo">
-      <span className="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32">
-          <rect width="32" height="32" rx="9" fill="#C6EF3A" />
-          <path d="M10 8h3.4V20.6H22V24H10V8z" fill="#172100" />
-        </svg>
-      </span>
-      <span className="logo-word">
-        <strong>Legacy</strong>
-        <small>IT Solutions</small>
-      </span>
+      <img
+        src="/kasvibes-logo.png"
+        alt="Kasvibes – We Build Future"
+        className="logo-img"
+      />
     </a>
   )
 }

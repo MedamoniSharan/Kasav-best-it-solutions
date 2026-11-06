@@ -116,6 +116,8 @@ button { cursor: pointer; }
 .logo-word strong { font-size: 18px; letter-spacing: -0.04em; }
 .logo-word small { color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
 
+.logo-img { height: 48px; width: auto; display: block; object-fit: contain; }
+
 .nav {
   display: flex;
   align-items: center;
