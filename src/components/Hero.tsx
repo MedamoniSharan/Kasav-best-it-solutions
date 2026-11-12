@@ -35,16 +35,23 @@ export function Hero() {
 
 export function Clients() {
   const rows = [0, 1]
+  const repeatedClients = [...clients, ...clients, ...clients, ...clients]
 
   return (
-    <section className="clients" aria-label="Sectors we staff">
+    <section className="clients" aria-label="Our Clients">
       <div className="marquee">
         <div className="marquee-track">
           {rows.map((copy) => (
             <ul key={copy} aria-hidden={copy === 1}>
-              {clients.map((name, index) => (
-                <li key={`${copy}-${name}`} className={index % 2 === 1 ? 'is-spaced' : undefined}>
-                  {name}
+              {repeatedClients.map((client, index) => (
+                <li key={`${copy}-${client.name}-${index}`} className="client-item">
+                  <img
+                    src={client.logo}
+                    alt={client.alt}
+                    title={client.name}
+                    className="client-logo"
+                    loading="lazy"
+                  />
                 </li>
               ))}
             </ul>

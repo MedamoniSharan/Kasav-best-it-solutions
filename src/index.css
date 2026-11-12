@@ -192,18 +192,23 @@ button { cursor: pointer; }
 .clients {
   background: var(--dark);
   color: #fff;
-  padding: 22px 0;
+  padding: 24px 0;
   overflow: hidden;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .marquee {
   overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
 }
 
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 28s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 
 .clients:hover .marquee-track,
@@ -214,26 +219,35 @@ button { cursor: pointer; }
 .marquee-track ul {
   display: flex;
   align-items: center;
-  gap: 72px;
+  gap: 84px;
   margin: 0;
-  padding: 0 72px 0 0;
+  padding: 0 84px 0 0;
   list-style: none;
 }
 
-.marquee-track li {
+.client-item {
   flex: 0 0 auto;
-  opacity: 0.92;
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  opacity: 0.88;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.marquee-track li.is-spaced {
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+.client-item:hover {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+.client-logo {
+  max-height: 42px;
+  max-width: 170px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
 }
 
 @keyframes marquee {

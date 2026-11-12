@@ -288,7 +288,29 @@ export const contact = {
   ],
 }
 
-export const clients = ['IT', 'Engineering', 'Healthcare', 'Finance', 'Administration', 'Customer Service']
+export type ClientItem = {
+  name: string
+  logo: string
+  alt: string
+}
+
+export const clients: ClientItem[] = [
+  {
+    name: 'Continental Coffee',
+    logo: '/clients/continental-coffee-lockup.png',
+    alt: 'Continental Coffee',
+  },
+  {
+    name: 'Sage IT',
+    logo: '/clients/sage-it.png',
+    alt: 'Sage IT',
+  },
+  {
+    name: 'Tech Partner',
+    logo: '/clients/cube-logo.png',
+    alt: 'Technology Partner',
+  },
+]
 
 export const stack = [
   'Software Engineers',
