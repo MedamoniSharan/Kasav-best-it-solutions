@@ -222,21 +222,21 @@ export const notes: Note[] = [
     id: 'careers',
     date: 'Candidates',
     title: 'Register for current and upcoming roles',
-    excerpt: 'A CV puts you in front of the Luton recruitment team. Candidate placement is free.',
-    body: 'Send a PDF or Word CV, up to 10MB, for IT, engineering, healthcare, finance, administration, customer support, or a future senior role. Profiles are reviewed within 24 to 48 hours and routed to Legacyitsoulutions@outlook.com.',
+    excerpt: 'A CV puts you in front of our recruitment team. Candidate placement is free.',
+    body: 'Send a PDF or Word CV, up to 10MB, for IT, engineering, healthcare, finance, administration, customer support, or a future senior role. Profiles are reviewed within 24 to 48 hours and routed to hr@kasvibes.com.',
   },
 ]
 
 export const sideQuotes: Quote[] = [
   {
     name: 'Our mission',
-    role: 'Legacy IT Solutions',
+    role: 'Kasvibes IT Solutions',
     text: 'To empower businesses by supplying high-performing human capital while providing professionals with transformative career opportunities.',
   },
   {
     name: 'Where we deliver',
-    role: 'United Kingdom and international',
-    text: 'Headquartered in Luton, with offshore and nearshore sourcing for clients and talent networks beyond the UK.',
+    role: 'Hyderabad and international',
+    text: 'Headquartered in Hyderabad, with sourcing for clients and talent networks across India and internationally.',
   },
 ]
 
@@ -260,29 +260,23 @@ export const quotes: Quote[] = [
 
 export const contact = {
   phones: [
-    { label: 'UK / WhatsApp', display: '+44 7466 929441', href: 'tel:+447466929441' },
-    { label: 'India / WhatsApp', display: '+91 90529 39313', href: 'tel:+919052939313' },
+    { label: 'Phone / WhatsApp', display: '+91 93911 44797', href: 'tel:+919391144797' },
   ] satisfies Phone[],
-  whatsappHref: 'https://wa.me/447466929441',
-  email: 'hr@legacyituk.in',
-  emailHref: 'mailto:hr@legacyituk.in',
-  careersEmail: 'Legacyitsoulutions@outlook.com',
-  careersEmailHref: 'mailto:Legacyitsoulutions@outlook.com',
+  whatsappHref: 'https://wa.me/919391144797',
+  email: 'hr@kasvibes.com',
+  emailHref: 'mailto:hr@kasvibes.com',
+  careersEmail: 'hr@kasvibes.com',
+  careersEmailHref: 'mailto:hr@kasvibes.com',
   offices: [
     {
-      label: 'United Kingdom (HQ)',
-      lines: ['Arthur Street, Luton, LU1 3SG', 'Bedfordshire, United Kingdom'],
-      mapHref: 'https://www.google.com/maps/search/?api=1&query=Arthur%20Street%20Luton%20LU1%203SG',
-    },
-    {
-      label: 'India office',
-      lines: ['Manikanta Nilayam, Bustand Backside', 'Nandivelugu Road, Guntur – 522001'],
+      label: 'Headquarters',
+      lines: ['aVance Business Hub, HITEC City', 'Hyderabad, Telangana 500081'],
       mapHref:
-        'https://www.google.com/maps/search/?api=1&query=Manikanta%20Nilayam%20Nandivelugu%20Road%20Guntur%20522001',
+        'https://www.google.com/maps/search/?api=1&query=aVance+Business+Hub+HITEC+City+Hyderabad+Telangana+500081',
     },
   ] satisfies Office[],
   hours: [
-    { days: 'Monday to Friday', note: '9:00 AM – 6:00 PM BST' },
+    { days: 'Monday to Friday', note: '9:00 AM – 6:00 PM IST' },
     { days: 'Saturday', note: 'Closed' },
     { days: 'Sunday', note: 'Closed' },
   ],

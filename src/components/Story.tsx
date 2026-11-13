@@ -4,14 +4,14 @@ import { Logo } from './Header'
 
 const team = [
   {
-    name: 'United Kingdom',
-    role: 'Headquarters · Luton, Bedfordshire',
+    name: 'Consulting & Delivery',
+    role: 'Headquarters · Hyderabad, Telangana',
     photo: '/images/office-a.jpg',
     alt: 'Team working together around a table',
   },
   {
-    name: 'India',
-    role: 'Delivery centre · Guntur, Andhra Pradesh',
+    name: 'Talent Acquisition & Search',
+    role: 'Delivery centre · Hyderabad, Telangana',
     photo: '/images/collab-2.jpg',
     alt: 'Two colleagues reviewing work at a desk',
   },
@@ -22,8 +22,8 @@ export function Team() {
     <section className="section team">
       <div className="wrap">
         <header className="section-head is-center">
-          <h2>Two offices, one delivery team</h2>
-          <p>Luton leads client work. Guntur supports sourcing for UK and international hiring.</p>
+          <h2>Our delivery & sourcing team</h2>
+          <p>Our Hyderabad headquarters leads client partnerships and recruitment operations.</p>
         </header>
         <div className="team-row">
           {team.map((person) => (
@@ -66,7 +66,7 @@ export function About() {
         <div className="about-copy">
           <h2>Building enduring teams</h2>
           <p>
-            Founded in Luton, Legacy IT Solutions treats staffing as a strategic part of the business. We hire across the United Kingdom and internationally in IT, engineering, healthcare, finance, administration, and customer support.
+            Kasvibes IT Solutions treats staffing as a strategic part of the business. We hire across Hyderabad, India, and internationally in IT, engineering, healthcare, finance, administration, and customer support.
           </p>
           <ul className="checks">
             <li>Technical and compliance screening before a profile is shared</li>
@@ -191,7 +191,7 @@ export function Contact() {
     <section className="section contact" id="contact">
       <div className="wrap contact-grid">
         <div>
-          <h2>Contact Legacy IT Solutions</h2>
+          <h2>Contact Kasvibes IT Solutions</h2>
           <p>
             Employers, candidates, and partners can write to us here. A senior recruiter replies within 24 business hours. For an urgent vacancy, use WhatsApp.
           </p>
@@ -283,7 +283,7 @@ export function Footer() {
       <div className="wrap footer-grid">
         <div>
           <Logo />
-          <p>Staffing for IT, engineering, healthcare, finance, administration, and customer service. Headquarters in Luton, with delivery from Guntur.</p>
+          <p>Staffing for IT, engineering, healthcare, finance, administration, and customer service. Headquarters at aVance Business Hub, Hyderabad.</p>
         </div>
         <div>
           <h3>Company</h3>
@@ -313,13 +313,13 @@ export function Footer() {
             </a>
           ))}
           <a href={contact.emailHref}>{contact.email}</a>
-          <p>Mon–Fri 9:00 AM – 6:00 PM BST · Sat & Sun closed</p>
+          <p>Mon–Fri 9:00 AM – 6:00 PM IST · Sat & Sun closed</p>
         </div>
       </div>
       <div className="footer-bar">
         <div className="wrap">
-          <span>© 2026 Legacy IT Solutions. All rights reserved.</span>
-          <span>Luton, United Kingdom</span>
+          <span>© 2026 Kasvibes IT Solutions. All rights reserved.</span>
+          <span>Hyderabad, Telangana</span>
         </div>
       </div>
     </footer>

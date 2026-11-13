@@ -20,7 +20,7 @@ export function Hero() {
           with the right people
         </h1>
         <p>
-          Legacy IT Solutions is a staffing partner for IT, engineering, healthcare, finance, administration, and customer service. We source people who fit the role and stay long enough to matter.
+          Kasvibes IT Solutions is a staffing partner for IT, engineering, healthcare, finance, administration, and customer service. We source people who fit the role and stay long enough to matter.
         </p>
         <a className="btn" href="#contact">
           Talk to us
