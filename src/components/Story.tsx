@@ -5,13 +5,13 @@ import { Logo } from './Header'
 const team = [
   {
     name: 'Consulting & Delivery',
-    role: 'Headquarters · Hyderabad, Telangana',
+    role: 'Headquarters · Plano, Texas',
     photo: '/images/office-a.jpg',
     alt: 'Team working together around a table',
   },
   {
     name: 'Talent Acquisition & Search',
-    role: 'Delivery centre · Hyderabad, Telangana',
+    role: 'Delivery centre · Plano, Texas',
     photo: '/images/collab-2.jpg',
     alt: 'Two colleagues reviewing work at a desk',
   },
@@ -23,7 +23,7 @@ export function Team() {
       <div className="wrap">
         <header className="section-head is-center">
           <h2>Our delivery & sourcing team</h2>
-          <p>Our Hyderabad headquarters leads client partnerships and recruitment operations.</p>
+          <p>Our Plano headquarters leads client partnerships and recruitment operations.</p>
         </header>
         <div className="team-row">
           {team.map((person) => (
@@ -66,7 +66,7 @@ export function About() {
         <div className="about-copy">
           <h2>Building enduring teams</h2>
           <p>
-            Kasvibes IT Solutions treats staffing as a strategic part of the business. We hire across Hyderabad, India, and internationally in IT, engineering, healthcare, finance, administration, and customer support.
+            Kasvibes IT Solutions treats staffing as a strategic part of the business. We hire across the United States and internationally in IT, engineering, healthcare, finance, administration, and customer support.
           </p>
           <ul className="checks">
             <li>Technical and compliance screening before a profile is shared</li>
@@ -283,7 +283,7 @@ export function Footer() {
       <div className="wrap footer-grid">
         <div>
           <Logo />
-          <p>Staffing for IT, engineering, healthcare, finance, administration, and customer service. Headquarters at aVance Business Hub, Hyderabad.</p>
+          <p>Staffing for IT, engineering, healthcare, finance, administration, and customer service. Headquarters in Plano, Texas.</p>
         </div>
         <div>
           <h3>Company</h3>
@@ -313,13 +313,13 @@ export function Footer() {
             </a>
           ))}
           <a href={contact.emailHref}>{contact.email}</a>
-          <p>Mon–Fri 9:00 AM – 6:00 PM IST · Sat & Sun closed</p>
+          <p>Mon–Fri 9:00 AM – 6:00 PM CST · Sat & Sun closed</p>
         </div>
       </div>
       <div className="footer-bar">
         <div className="wrap">
           <span>© 2026 Kasvibes IT Solutions. All rights reserved.</span>
-          <span>Hyderabad, Telangana</span>
+          <span>Plano, Texas</span>
         </div>
       </div>
     </footer>

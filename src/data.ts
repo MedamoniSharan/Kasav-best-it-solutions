@@ -235,8 +235,8 @@ export const sideQuotes: Quote[] = [
   },
   {
     name: 'Where we deliver',
-    role: 'Hyderabad and international',
-    text: 'Headquartered in Hyderabad, with sourcing for clients and talent networks across India and internationally.',
+    role: 'United States and international',
+    text: 'Headquartered in Plano, Texas, with sourcing for clients and talent networks across the United States and internationally.',
   },
 ]
 
@@ -260,9 +260,9 @@ export const quotes: Quote[] = [
 
 export const contact = {
   phones: [
-    { label: 'Phone / WhatsApp', display: '+91 93911 44797', href: 'tel:+919391144797' },
+    { label: 'Mobile / WhatsApp', display: '+1 (945) 241-8343', href: 'tel:+19452418343' },
   ] satisfies Phone[],
-  whatsappHref: 'https://wa.me/919391144797',
+  whatsappHref: 'https://wa.me/19452418343',
   email: 'hr@kasvibes.com',
   emailHref: 'mailto:hr@kasvibes.com',
   careersEmail: 'hr@kasvibes.com',
@@ -270,13 +270,13 @@ export const contact = {
   offices: [
     {
       label: 'Headquarters',
-      lines: ['aVance Business Hub, HITEC City', 'Hyderabad, Telangana 500081'],
+      lines: ['5345 Towne Square Dr, Suite 135', 'Plano, TX 75024'],
       mapHref:
-        'https://www.google.com/maps/search/?api=1&query=aVance+Business+Hub+HITEC+City+Hyderabad+Telangana+500081',
+        'https://www.google.com/maps/search/?api=1&query=5345+Towne+Square+Dr+Suite+135+Plano+TX+75024',
     },
   ] satisfies Office[],
   hours: [
-    { days: 'Monday to Friday', note: '9:00 AM – 6:00 PM IST' },
+    { days: 'Monday to Friday', note: '9:00 AM – 6:00 PM CST' },
     { days: 'Saturday', note: 'Closed' },
     { days: 'Sunday', note: 'Closed' },
   ],
